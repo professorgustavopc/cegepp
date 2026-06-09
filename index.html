@@ -89,5 +89,106 @@
             }
         </style>
     </head>
-   
+    <body class="font-sans bg-gray-50 text-gray-800 antialiased overflow-x-hidden" id="inicio">
+
+        <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-md transition-all duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <div class="flex-shrink-0 flex items-center gap-3">
+                        <img class="h-20 w-auto object-cover" src="assets/logo4.png" alt="CEGEPP Logo">
+                        <!-- <div class="flex flex-col">
+                            <span class="font-extrabold text-xl tracking-tight text-brandDark">CEGEPP</span>
+                            <span class="text-xs font-medium text-brandAzul tracking-widest uppercase">Centro Educacional</span>
+                        </div> -->
+                    </div>
+                    
+                    <nav class="hidden md:flex space-x-1 lg:space-x-4">
+                        <a href="#inicio" class="px-3 py-2 rounded-md text-sm font-bold text-gray-700 hover:text-brandAzul transition">Início</a>
+                        <a href="#cegepp" class="px-3 py-2 rounded-md text-sm font-bold text-gray-700 hover:text-brandAzul transition">Quem Somos</a>
+                        <a href="#servicos" class="px-3 py-2 rounded-md text-sm font-bold text-gray-700 hover:text-brandAzul transition">Serviços & Cursos</a>
+                        <a href="#portfolio" class="px-3 py-2 rounded-md text-sm font-bold text-gray-700 hover:text-brandAzul transition">Prof. Gustavo</a>
+                        <a href="#experiencia" class="px-3 py-2 rounded-md text-sm font-bold text-gray-700 hover:text-brandAzul transition">Trajetória</a>
+                        <a href="#contato" class="ml-4 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-lg text-sm font-bold text-white bg-gradient-brand shadow-sm hover:opacity-85 transition">Contato</a>
+                    </nav>
+
+                    <div class="flex md:hidden">
+                        <button type="button" onclick="toggleMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-brandAzul hover:bg-gray-100 focus:outline-none">
+                            <i id="menuIcon" class="fa-solid fa-bars text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-inner">
+                <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3 text-center">
+                    <a href="#inicio" onclick="toggleMenu()" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-brandAzul">Início</a>
+                    <a href="#cegepp" onclick="toggleMenu()" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-brandAzul">Quem Somos</a>
+                    <a href="#servicos" onclick="toggleMenu()" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-brandAzul">Serviços & Cursos</a>
+                    <a href="#portfolio" onclick="toggleMenu()" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-brandAzul">Prof. Gustavo</a>
+                    <a href="#experiencia" onclick="toggleMenu()" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-brandAzul">Trajetória</a>
+                    <a href="#contato" onclick="toggleMenu()" class="mt-4 block w-full px-4 py-3 text-center font-bold text-white bg-gradient-brand rounded-lg">Contato</a>
+                </div>
+            </div>
+        </header>
+
+
+
+        <footer class="bg-slate-950 text-gray-400 py-12 border-t border-slate-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-8 ">
+                    
+                    <div class="flex items-center gap-3 text-center md:text-left">
+                        <div>
+                            <p class="text-white font-bold text-sm tracking-wide">Centro Educacional Gustavo e Elma Peres Prates (CEGEPP)</p>
+                            <p class="text-xs text-gray-400">© 2026 Todos os direitos reservados. Sítio Novo do Tocantins - TO</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4 text-xl">
+                        <a href="https://wa.me/5511981323327" target="_blank" class="w-10 h-10 rounded-lg bg-slate-900 hover:bg-emerald-600 text-gray-300 hover:text-white flex items-center justify-center transition-all duration-200" title="WhatsApp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="https://facebook.com/gpcosta14" target="_blank" class="w-10 h-10 rounded-lg bg-slate-900 hover:bg-blue-600 text-gray-300 hover:text-white flex items-center justify-center transition-all duration-200" title="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/professorescegepp" target="_blank" class="w-10 h-10 rounded-lg bg-slate-900 hover:bg-pink-600 text-gray-300 hover:text-white flex items-center justify-center transition-all duration-200" title="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://lattes.cnpq.br/7904023778767490" target="_blank" class="w-10 h-10 rounded-lg bg-slate-900 hover:bg-blue-800 text-gray-300 hover:text-white flex items-center justify-center transition-all duration-200" title="CNPq Lattes">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+
+        <script>
+            // Toggle para menu mobile responsivo
+            function toggleMenu() {
+                const menu = document.getElementById('mobileMenu');
+                const icon = document.getElementById('menuIcon');
+                
+                if(menu.classList.contains('hidden')) {
+                    menu.classList.remove('hidden');
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                } else {
+                    menu.classList.add('hidden');
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll('.fade-in-element').forEach(el => observer.observe(el));
+        </script>
+    </body>
 </html>
