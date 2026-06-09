@@ -1,4 +1,93 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CEGEPP</title>
+        <link rel="icon" type="image/png" href="assets/logo2.png">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            brandAzul: '#2758a3',
+                            brandRoxo: '#2b00ac',
+                            brandDark: '#1e1b4b',
+                        },
+                        fontFamily: {
+                            sans: ['Inter', 'sans-serif'],
+                        }
+                    }
+                }
+            }
+        </script>
+        <style>
+            .bg-gradient-brand {
+                background: linear-gradient(135deg, #2758a3 0%, #2b00ac 100%);
+            }
+            .text-gradient-brand {
+                background: linear-gradient(135deg, #2758a3 0%, #2b00ac 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
 
+            .gallery-track{
+                width:max-content;
+                animation: scrollGallery 40s linear infinite;
+            }
+
+            .gallery-track:hover{
+                animation-play-state: paused;
+            }
+
+            .gallery-img{
+                width:320px;
+                height:220px;
+                object-fit:cover;
+                border-radius:20px;
+                box-shadow:0 10px 30px rgba(0,0,0,.15);
+                transition:.3s;
+            }
+
+            .gallery-img:hover{
+                transform:scale(1.05);
+            }
+
+            .fade-in-element {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            }
+
+            .fade-in-element.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            @keyframes scrollGallery{
+                from{
+                    transform:translateX(0);
+                }
+                to{
+                    transform:translateX(-50%);
+                }
+            }
+
+            @media(max-width:768px){
+
+                .gallery-img{
+                    width:240px;
+                    height:170px;
+                }
+
+            }
+        </style>
+    </head>
+   
 </html>
