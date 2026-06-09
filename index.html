@@ -70,6 +70,28 @@
                 transform: translateY(0);
             }
 
+            #mobileMenu {
+                display: grid;
+                grid-template-rows: 0fr;
+                transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                            opacity 0.3s ease;
+                opacity: 0;
+                overflow: hidden;
+            }
+            #mobileMenu.open {
+                grid-template-rows: 1fr;
+                opacity: 1;
+            }
+            #mobileMenu > div {
+                overflow: hidden;
+            }
+            #menuIcon {
+                transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            #menuIcon.open {
+                transform: rotate(90deg);
+            }
+
             @keyframes scrollGallery{
                 from{
                     transform:translateX(0);
@@ -93,9 +115,9 @@
 
         <header class="sticky top-0 z-50 bg-white shadow-md transition-all duration-300">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center justify-between h-20">
+                <div class="flex items-center justify-between">
                     <div class="flex-shrink-0 flex items-center gap-3">
-                        <img class="h-20 w-auto object-cover" src="assets/logo4.png" alt="CEGEPP Logo">
+                        <a href="#inicio"><img class="h-20 w-auto object-cover" src="assets/logo4.png" alt="CEGEPP Logo"></a>
                         <!-- <div class="flex flex-col">
                             <span class="font-extrabold text-xl tracking-tight text-brandDark">CEGEPP</span>
                             <span class="text-xs font-medium text-brandAzul tracking-widest uppercase">Centro Educacional</span>
@@ -117,18 +139,21 @@
                         </button>
                     </div>
                 </div>
-            </div>
 
-            <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-200 shadow-lg">
-                <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3 text-center">
-                    <a href="#inicio" onclick="toggleMenu()" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-blue-50 transition hover:text-brandAzul">Início</a>
-                    <a href="#cegepp" onclick="toggleMenu()" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-blue-50 transition hover:text-brandAzul">Quem Somos</a>
-                    <a href="#servicos" onclick="toggleMenu()" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-blue-50 transition hover:text-brandAzul">Serviços & Cursos</a>
-                    <a href="#portfolio" onclick="toggleMenu()" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-blue-50 transition hover:text-brandAzul">Prof. Gustavo</a>
-                    <a href="#experiencia" onclick="toggleMenu()" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-blue-50 transition hover:text-brandAzul">Trajetória</a>
-                    <a href="#contato" onclick="toggleMenu()" class="mt-4 block w-full px-4 py-3 text-center font-bold text-white bg-gradient-brand rounded-lg">Contato</a>
+                <div class="block md:hidden">
+                    <div id="mobileMenu" class="bg-white border-t border-gray-200 shadow-lg">
+                        <div class="px-2 py-1 space-y-1 sm:px-3 text-center">
+                            <a href="#inicio" onclick="toggleMenu()" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-blue-50 transition hover:text-brandAzul">Início</a>
+                            <a href="#cegepp" onclick="toggleMenu()" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-blue-50 transition hover:text-brandAzul">Quem Somos</a>
+                            <a href="#servicos" onclick="toggleMenu()" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-blue-50 transition hover:text-brandAzul">Serviços & Cursos</a>
+                            <a href="#portfolio" onclick="toggleMenu()" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-blue-50 transition hover:text-brandAzul">Prof. Gustavo</a>
+                            <a href="#experiencia" onclick="toggleMenu()" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-blue-50 transition hover:text-brandAzul">Trajetória</a>
+                            <a href="#contato" onclick="toggleMenu()" class="mt-4 block w-full px-4 py-3 text-center font-bold text-white bg-gradient-brand rounded-lg">Contato</a>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </header>
 
         <main>
@@ -689,18 +714,19 @@
 
         <script>
             // Toggle para menu mobile responsivo
+            let isOpen = false;
             function toggleMenu() {
+                isOpen = !isOpen;
                 const menu = document.getElementById('mobileMenu');
                 const icon = document.getElementById('menuIcon');
-                
-                if(menu.classList.contains('hidden')) {
-                    menu.classList.remove('hidden');
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-xmark');
+                if (isOpen) {
+                    menu.classList.add('open');
+                    icon.classList.replace('fa-bars', 'fa-xmark');
+                    icon.classList.add('open');
                 } else {
-                    menu.classList.add('hidden');
-                    icon.classList.remove('fa-xmark');
-                    icon.classList.add('fa-bars');
+                    menu.classList.remove('open');
+                    icon.classList.replace('fa-xmark', 'fa-bars');
+                    icon.classList.remove('open');
                 }
             }
 
